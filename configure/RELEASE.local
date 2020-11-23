@@ -1,0 +1,12 @@
+SUPPORT=/home/epics/EPICS/support
+
+MOTOR=$(SUPPORT)/motor
+ASYN=$(SUPPORT)/asyn
+
+-include $(MOTOR)/modules/RELEASE.$(EPICS_HOST_ARCH).local
+# path to motorSmarAct is needed to build the IOC inside motorSmarAct, but outside motor
+MOTOR_SMARACT=$(SUPPORT)/motorSmarAct-R1-2-1
+
+#  EPICS_BASE 3.14.6 or later is required
+EPICS_BASE=/home/epics/EPICS/base
+-include $(TOP)/../configure/EPICS_BASE.$(EPICS_HOST_ARCH)
